@@ -57,5 +57,9 @@ def update(frame):
     return scat, *bar_container
 
 ani = FuncAnimation(fig, update, frames=200, interval=30, blit=True)
+
+savefile = './mp4/gas_molecules_no_collision.mp4'
+ani.save(savefile, writer='ffmpeg', fps=30, extra_args=['-r', '30'])
+
 plt.tight_layout()
 plt.show()
